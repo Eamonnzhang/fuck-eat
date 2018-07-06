@@ -58,6 +58,11 @@
         startCook: function () {
             let _this = this;
             $('.menu-result').hide();
+            let oldNum = $('input').val().trim();
+            if (oldNum.indexOf('.') > -1) {
+                _this.showAlert('你是不把谁当人了？')
+                return;
+            }
             let people = parseInt($('input').val().trim())
             if (!people || people <= 0) {
                 _this.showAlert('大兄弟，别闹！')
